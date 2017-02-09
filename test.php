@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Student
- * Date: 09.02.2017
- * Time: 21:33
- */
+$a = 3;
+$b = 2;
+$c = $a+$b;
+echo $c;
