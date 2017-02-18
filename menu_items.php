@@ -6,7 +6,7 @@ $menu_item1 = [
     'Link' => '/',
     'Active' => true,
     'Menu_type' => 'top',
-    'Position' => '3'
+    'Position' => '0'
 ],
 
 $menu_item2 = [
@@ -22,7 +22,7 @@ $menu_item3 = [
     'Link' => 'about.php',
     'Active' => true,
     'Menu_type' => 'top',
-    'Position' => '3'
+    'Position' => '2'
 ],
 
 $menu_item4 = [
@@ -30,7 +30,7 @@ $menu_item4 = [
     'Link' => 'contacts.php',
     'Active' => true,
     'Menu_type' => 'top',
-    'Position' => '3'
+    'Position' => '1'
 ],
 );
 

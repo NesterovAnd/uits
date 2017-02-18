@@ -1,26 +1,28 @@
 <?php
 require_once('menu_items.php');
 
-$echo_menu_item = function ($str) {
-    if ($str[Active] == true) {
+function menu_sort($a, $b)
+{
+    if ($a['Position'] == $b['Position']) {
+        return 0;
+    }
+    return ($a['Position'] < $b['Position']) ? -1 : 1;
+};
+
+function echo_menu_item($str) {
+    if ($str['Active'] == true) {
 
         echo <<<HERE
-
-
             <ul>
-            <li>$str[Title]</li>
+            <li>{$str['Title']}</li>
             </ul>
 HERE;
 
-/*
-            foreach ($str as $v) {
-            echo "$v<br>";
-        }
-*/
     }
 };
 
-array_filter($menu_items, $echo_menu_item);
+usort($menu_items, "menu_sort");
+array_filter($menu_items, "echo_menu_item");
 
 
 ?>
