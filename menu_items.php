@@ -4,7 +4,7 @@ $menu_items = array(
 $menu_item1 = [
     'Title' => 'Главная',
     'Link' => '/',
-    'Active' => false,
+    'Active' => true,
     'Menu_type' => 'top',
     'Position' => '3'
 ],

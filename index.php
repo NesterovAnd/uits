@@ -3,9 +3,20 @@ require_once('menu_items.php');
 
 $echo_menu_item = function ($str) {
     if ($str[Active] == true) {
-        foreach ($str as $v) {
+
+        echo <<<HERE
+
+
+            <ul>
+            <li>$str[Title]</li>
+            </ul>
+HERE;
+
+/*
+            foreach ($str as $v) {
             echo "$v<br>";
         }
+*/
     }
 };
 
