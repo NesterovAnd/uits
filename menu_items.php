@@ -1,11 +1,13 @@
 <?php
+
+$menu_items = array(
 $menu_item1 = [
     'Title' => 'Главная',
     'Link' => '/',
-    'Active' => true,
+    'Active' => false,
     'Menu_type' => 'top',
     'Position' => '3'
-];
+],
 
 $menu_item2 = [
     'Title' => 'Новости',
@@ -13,7 +15,7 @@ $menu_item2 = [
     'Active' => true,
     'Menu_type' => 'top',
     'Position' => '3'
-];
+],
 
 $menu_item3 = [
     'Title' => 'О нас',
@@ -21,7 +23,7 @@ $menu_item3 = [
     'Active' => true,
     'Menu_type' => 'top',
     'Position' => '3'
-];
+],
 
 $menu_item4 = [
     'Title' => 'Контакты',
@@ -29,6 +31,8 @@ $menu_item4 = [
     'Active' => true,
     'Menu_type' => 'top',
     'Position' => '3'
-];
+],
+);
+
 
 ?>
