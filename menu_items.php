@@ -12,7 +12,7 @@ $menu_item1 = [
 $menu_item2 = array(
     'Title' => 'Новости',
     'Link' => 'news.php',
-    'Active' => true,
+    'Active' => false,
     'Menu_type' => ['left', 'bottom'],
     'Position' => '3'
 ),
