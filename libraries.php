@@ -1,11 +1,10 @@
 <?php
 
-function resolve_positions($position_array) {
-    foreach ($position_array as $v) {
-        //TODO: нужно разобрать подмассив с использоанием is_array (возможно не здесь) и назначить одной переменной данные из массива или из подмассива.
-        foreach ($v['Menu_type'] as $i) {
-            echo $i . "<br>";
-        }
+function resolve_positions($position, $full_menu) {
+    foreach ($full_menu as $v) {
+        //is_array($v);
+        //var_dump($v);
+        echo in_array($position, $v);
     }
 };
 

@@ -1,13 +1,15 @@
 <?php
 require_once('menu_items.php');
 
-function left_menu($menus) {
-    return $menus['Active'] == false;
-
+$show_menu = function ($show_menu_items) {
+    foreach ($show_menu_items as $menu_item) {
+        //var_dump($menu_item);
+        return $menu_item;
+    }
 };
 
-$a = array_filter($menu_items, "left_menu");
-var_dump($a);
+$show_menu($menu_items);
 
+var_dump($menu_item);
 
 ?>

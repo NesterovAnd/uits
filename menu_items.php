@@ -9,19 +9,19 @@ $menu_item1 = [
     'Position' => '0'
 ],
 
-$menu_item2 = array(
+$menu_item2 = [
     'Title' => 'Новости',
     'Link' => 'news.php',
     'Active' => false,
     'Menu_type' => ['left', 'bottom'],
     'Position' => '3'
-),
+],
 
 $menu_item3 = [
     'Title' => 'О нас',
     'Link' => 'about.php',
     'Active' => true,
-    'Menu_type' => 'left',
+    'Menu_type' => ['left'],
     'Position' => '2'
 ],
 
@@ -29,9 +29,9 @@ $menu_item4 = [
     'Title' => 'Контакты',
     'Link' => 'contacts.php',
     'Active' => true,
-    'Menu_type' => 'top',
+    'Menu_type' => ['top'],
     'Position' => '3'
-],
+]
 );
 
 ?>
