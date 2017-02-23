@@ -1,11 +1,18 @@
 <?php
 
 function resolve_positions($position, $full_menu) {
-    foreach ($full_menu as $v) {
+
+    echo '<link href="css/style.css" rel="stylesheet" media="all" />';
+
+    foreach ($full_menu as $item) {
         //is_array($v);
         //var_dump($v);
-        echo in_array($position, $v);
     }
+//Перенести до форича, а в фориче вывести пункты меню.
+    if (in_array($position, $item) == true) {
+            echo '<div class=' . $position . '>';
+        }
+    //echo '<a href'$item;
 };
 
 function menu_sort($a, $b)

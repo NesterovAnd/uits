@@ -1,5 +1,5 @@
 <?php
-function show_menu($array) {
+function show_menu1($array) {
     foreach ($array as $v) {
         echo <<<HERE
             <ul>
