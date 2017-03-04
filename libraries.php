@@ -1,18 +1,34 @@
 <?php
 
-function resolve_positions($position, $full_menu) {
+/**
+ * @param $position
+ * @param $full_menu
+ * @return mixed
+ */
+function show_menu($position, $full_menu, $link, $parrent, $wrapper) {
 
-    echo '<link href="css/style.css" rel="stylesheet" media="all" />';
-
-    foreach ($full_menu as $item) {
-        //is_array($v);
-        //var_dump($v);
+    $items = array_filter($full_menu, function ($item) USE ($position) {
+      return in_array($position, $item['Menu_type']);
     }
-//Перенести до форича, а в фориче вывести пункты меню.
-    if (in_array($position, $item) == true) {
-            echo '<div class=' . $position . '>';
+    );
+    //var_dump($items);
+
+    echo "<div class={$position}menu>";
+
+    foreach ($items as $item) {
+            echo "<$wrapper>";
+            echo "<$parrent><$link href={$item['Link']}>{$item['Title']}</$link></$parrent>";
+            echo "</$wrapper>";
+
+
+        //var_dump($item['Children']);
+        if (!empty($item['Children'])) {
+            show_menu($position, $item, $link, $parrent, $wrapper);
         }
-    //echo '<a href'$item;
+
+    };
+
+    echo '</div>';
 };
 
 function menu_sort($a, $b)

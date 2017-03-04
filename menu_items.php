@@ -6,13 +6,20 @@ $menu_item1 = [
     'Link' => '/',
     'Active' => true,
     'Menu_type' => ['top', 'left'],
-    'Position' => '0'
+    'Position' => '0',
+    'Children' => [
+        'Title' => 'Children',
+        'Link' => '/children.php',
+        'Active' => true,
+        'Menu_type' => ['top', 'left'],
+        'Position' => '0'
+    ],
 ],
 
 $menu_item2 = [
     'Title' => 'Новости',
     'Link' => 'news.php',
-    'Active' => false,
+    'Active' => true,
     'Menu_type' => ['left', 'bottom'],
     'Position' => '3'
 ],
