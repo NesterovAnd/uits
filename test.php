@@ -1,15 +1,12 @@
 <?php
 require_once('menu_items.php');
 
-$show_menu = function ($show_menu_items) {
-    foreach ($show_menu_items as $menu_item) {
-        //var_dump($menu_item);
-        return $menu_item;
-    }
+function not_active_filter($menu_items) {
+    return $menu_items['Active'] == true;
+
 };
 
-$show_menu($menu_items);
-
-var_dump($menu_item);
+$menu_items = array_filter($menu_items, 'not_active_filter');
+var_dump($menu_items);
 
 ?>
