@@ -13,9 +13,10 @@ $_POST['pass']
 ];
 
 if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['pass'])) {
-    $_PHPSESSIONID['users'] = $users;
+    $_SESSION['users'] = $users;
     echo 'Вы успешно зарегистрированы';
     echo "<br><a href=/>На главную</a>";
+    var_dump($_SESSION);
 }
 //var_dump($_PHPSESSIONID['users']);
 

@@ -1,12 +1,13 @@
 <?php
 session_start();
-var_dump($_PHPSESSIONID['users']);
+var_dump($_COOKIE['PHPSESSIONID']);
 
-echo "<a href=register.php>Регистрация</a>";
-
+if (empty()) {
+    echo "<a href=register.php>Регистрация</a>";
+}
 require_once('menu_items.php');
 require_once('libraries.php');
-require_once('show_menu.php');
+
 
 $menu_items = array_filter($menu_items, "filter_not_active");
 
