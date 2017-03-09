@@ -8,8 +8,10 @@
 function show_menu($position, $full_menu, $link, $parrent, $wrapper) {
 
     $items = array_filter($full_menu, function ($item) USE ($position) {
-      return in_array($position, $item['Menu_type']);
-    }
+      if ($item['Active'] == true) {
+          return in_array($position, $item['Menu_type']);
+      }
+      }
     );
     //var_dump($items);
 
@@ -39,9 +41,5 @@ function menu_sort($a, $b)
     return ($a['Position'] < $b['Position']) ? -1 : 1;
 };
 
-
-function filter_not_active($menus) {
-    return $menus['Active'] == true;
-};
 
 ?>
