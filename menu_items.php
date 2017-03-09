@@ -10,7 +10,7 @@ $menu_item1 = [
     'Children' => [
         'Title' => 'Children',
         'Link' => '/children.php',
-        'Active' => true,
+        'Active' => false,
         'Menu_type' => ['top', 'left'],
         'Position' => '0'
     ],
