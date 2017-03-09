@@ -1,10 +1,10 @@
 <?php
 session_start();
-var_dump($_COOKIE['PHPSESSIONID']);
 
-if (empty()) {
-    echo "<a href=register.php>Регистрация</a>";
-}
+echo "<a href=register.php>Регистрация</a> / <a href=login.php>Авторизация</a>";
+
+
+
 require_once('menu_items.php');
 require_once('libraries.php');
 

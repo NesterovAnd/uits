@@ -6,10 +6,9 @@ if ($_POST['pass'] != $_POST['pass2']) {
 session_start();
 
 $users = [
-$_POST['name'],
-$_POST['login'],
-$_POST['email'],
-$_POST['pass']
+'name' => $_POST['name'],
+'login' => $_POST['login'],
+'pass' => password_hash($_POST['pass'], CRYPT_BLOWFISH)
 ];
 
 if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['pass'])) {

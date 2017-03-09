@@ -1,9 +1,9 @@
 <?php
 session_start();
-$_SESSION['login'] = $_POST['login'];
-$_SESSION['pass'] = $_POST['pass'];
+if ($_SESSION['login'] = $_POST['login'] & $_SESSION['pass'] = password_verify($_POST['pass'], CRYPT_BLOWFISH)) {
 echo $_SESSION['login'];
 echo $_SESSION['pass'];
+}
 include_once "login_form.html";
 
 
