@@ -1,8 +1,11 @@
 <?php
 session_start();
-if ($_SESSION['login'] = $_POST['login'] & $_SESSION['pass'] = password_verify($_POST['pass'], CRYPT_BLOWFISH)) {
-echo $_SESSION['login'];
-echo $_SESSION['pass'];
+foreach ($_SESSION['users'] as $user) {
+
+    if ($user['login'] == $_POST['login'] && password_verify($_POST['pass'], $user['pass'])) {
+        $_SESSION['user'] = $user;
+        //var_dump($user);
+    }
 }
 include_once "login_form.html";
 
