@@ -18,9 +18,14 @@ $reg_check = function ($name, $email, $pass)
         exit('Имя слишком короткое');
     }
 
-    preg_match("#([\w\d.]+@[a-zA-Z-]+?[a-zA-Z]{2,6})#", $email, $mached_email);
+    preg_match("#([\w\d.]+@[a-zA-Z-]+?\.([a-zA-Z]){2,6})#", $email, $mached_email);
     if (!count($mached_email)) {
         exit('Email не настоящий');
+    }
+
+    preg_match("#(?=^.{8,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$#", $pass, $mached_pass);
+    if (!count($mached_pass)) {
+        exit('Пароль должен быть длинной от 8 символов, содержать символы обоих регистров и цифры');
     }
 
     $user = [
