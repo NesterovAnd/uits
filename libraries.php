@@ -1,6 +1,16 @@
 <?php
 
-function show_menu($position, $full_menu, $link, $parrent, $wrapper) {
+function show_menu($position, $full_menu, $link, $parrent, $wrapper)
+{
+
+    $menu_sort = function($a, $b) {
+        if ($a['Position'] == $b['Position']) {
+            return 0;
+        }
+        return ($a['Position'] < $b['Position']) ? -1 : 1;
+    };
+
+    usort($full_menu, $menu_sort);
 
     $items = array_filter($full_menu, function ($item) USE ($position) {
           if ($item['Active'] == true) {
@@ -25,12 +35,3 @@ function show_menu($position, $full_menu, $link, $parrent, $wrapper) {
     echo '</div>';
 };
 
-function menu_sort($a, $b)
-{
-    if ($a['Position'] == $b['Position']) {
-        return 0;
-    }
-    return ($a['Position'] < $b['Position']) ? -1 : 1;
-};
-
-?>
