@@ -39,8 +39,9 @@ $reg_check = function ($name, $email, $pass)
     echo "<br><a href=/>На главную</a>";
 };
 
-$reg_check($_POST['name'], $_POST['login'], $_POST['pass']);
-
+if ($_POST) {
+    $reg_check($_POST['name'], $_POST['login'], $_POST['pass']);
+}
 //else exit('Заполните все поля');
 //var_dump($_PHPSESSIONID['users']);
 
