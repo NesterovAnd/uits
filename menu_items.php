@@ -10,7 +10,7 @@ $menu_item1 = [
     'Children' => [
         'Title' => 'Children',
         'Link' => '/children.php',
-        'Active' => false,
+        'Active' => true,
         'Menu_type' => ['top', 'left'],
         'Position' => '0'
     ],
@@ -19,8 +19,8 @@ $menu_item1 = [
 $menu_item2 = [
     'Title' => 'Новости',
     'Link' => 'news.php',
-    'Active' => false,
-    'Menu_type' => ['left', 'bottom'],
+    'Active' => true,
+    'Menu_type' => ['left', 'bottom', 'top'],
     'Position' => '3'
 ],
 
@@ -36,8 +36,8 @@ $menu_item4 = [
     'Title' => 'Контакты',
     'Link' => 'contacts.php',
     'Active' => true,
-    'Menu_type' => ['top'],
-    'Position' => '3'
+    'Menu_type' => ['top', 'left'],
+    'Position' => '2'
 ]
 );
 

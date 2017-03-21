@@ -1,19 +1,13 @@
 <?php
 
-/**
- * @param $position
- * @param $full_menu
- * @return mixed
- */
 function show_menu($position, $full_menu, $link, $parrent, $wrapper) {
 
     $items = array_filter($full_menu, function ($item) USE ($position) {
-      if ($item['Active'] == true) {
-          return in_array($position, $item['Menu_type']);
-      }
+          if ($item['Active'] == true) {
+              return in_array($position, $item['Menu_type']);
+          }
       }
     );
-    //var_dump($items);
 
     echo "<div class={$position}menu>";
 
@@ -22,8 +16,6 @@ function show_menu($position, $full_menu, $link, $parrent, $wrapper) {
             echo "<$parrent><$link href={$item['Link']}>{$item['Title']}</$link></$parrent>";
             echo "</$wrapper>";
 
-
-        //var_dump($item['Children']);
         if (!empty($item['Children'])) {
             show_menu($position, $item, $link, $parrent, $wrapper);
         }
@@ -40,6 +32,5 @@ function menu_sort($a, $b)
     }
     return ($a['Position'] < $b['Position']) ? -1 : 1;
 };
-
 
 ?>
