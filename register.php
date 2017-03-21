@@ -1,9 +1,7 @@
 <?php
 include_once "register_form.html";
 if ($_POST['pass'] != $_POST['pass2']) {
-    //echo 'Пароли не совпадают';
-    exit('Пароли не совпадают')
-    ;
+    exit('Пароли не совпадают');
 }
 session_start();
 
@@ -34,6 +32,7 @@ $reg_check = function ($name, $email, $pass)
         'pass' => password_hash($pass, CRYPT_BLOWFISH),
         'group' => rand(1, 2)
     ];
+
     array_push($_SESSION['users'], $user);
     echo 'Вы успешно зарегистрированы';
     echo "<br><a href=/>На главную</a>";
@@ -42,8 +41,6 @@ $reg_check = function ($name, $email, $pass)
 if ($_POST) {
     $reg_check($_POST['name'], $_POST['login'], $_POST['pass']);
 }
-//else exit('Заполните все поля');
-//var_dump($_PHPSESSIONID['users']);
 
 
 
