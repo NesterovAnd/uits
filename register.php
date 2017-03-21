@@ -11,18 +11,32 @@ if (empty($_SESSION['users'])) {
     $_SESSION['users'] = [];
 }
 
-$user = [
-'name' => $_POST['name'],
-'login' => $_POST['login'],
-'pass' => password_hash($_POST['pass'], CRYPT_BLOWFISH)
-];
+$reg_check = function ($name, $email, $pass)
+{
+    preg_match("#[\w]{2,}#", $name, $matched_name);
+    if (!count($matched_name)) {
+        exit('Имя слишком короткое');
+    }
 
-if (!empty($user['name']) && !empty($user['login']) && !empty($user['pass'])) {
+    preg_match("#([\w\d.]+@[a-zA-Z-]+?[a-zA-Z]{2,6})#", $email, $mached_email);
+    if (!count($mached_email)) {
+        exit('Email не настоящий');
+    }
+
+    $user = [
+        'name' => $name,
+        'login' => $email,
+        'pass' => password_hash($pass, CRYPT_BLOWFISH),
+        'group' => rand(1, 2)
+    ];
     array_push($_SESSION['users'], $user);
     echo 'Вы успешно зарегистрированы';
     echo "<br><a href=/>На главную</a>";
-    //var_dump($_SESSION);
-}
+};
+
+$reg_check($_POST['name'], $_POST['login'], $_POST['pass']);
+
+//else exit('Заполните все поля');
 //var_dump($_PHPSESSIONID['users']);
 
 
